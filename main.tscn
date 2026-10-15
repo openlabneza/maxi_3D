@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://deveimrokpf2r"]
+
+[ext_resource type="Script" uid="uid://cqiq86vbtdp71" path="res://Zival.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bu2qd4b6irqdx" path="res://button.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cwt27xkdotk4d" path="res://kuza.blend" id="2_h2yge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+
+[node name="main" type="Node3D" unique_id=1297904297]
+
+[node name="Kuža" type="Node3D" parent="." unique_id=686340040]
+script = ExtResource("1_ig7tw")
+ime = "kuža Pepe"
+glas = "hov hov!"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Kuža" unique_id=1086654769]
+
+[node name="Area3D" type="Area3D" parent="Kuža" unique_id=71070030]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kuža/Area3D" unique_id=1957870518]
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="Button" type="Button" parent="." unique_id=1446809376]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.25
+offset_top = -145.5
+offset_right = 57.25
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Klik!"
+script = ExtResource("2_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=179425128]
+transform = Transform3D(0.55739737, 0, 0.83024585, 0, 1, 0, -0.83024585, 0, 0.55739737, 7.455288, -0.10760546, 2.7208853)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=18448952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3304367, 22.25993, 0)
+light_energy = 0.73
+light_indirect_energy = 0.82
+light_volumetric_fog_energy = 0.73
+light_specular = 0.0
+shadow_enabled = true
+shadow_bias = 4.223
+shadow_normal_bias = 0.66
+shadow_opacity = 0.0
+shadow_blur = 10.0
+
+[node name="kuza" parent="." unique_id=362565945 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1686993, 3.5683088, -3.170724)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

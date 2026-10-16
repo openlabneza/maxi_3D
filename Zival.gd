@@ -1,6 +1,6 @@
 extends Node3D
-@export var ime: String
-@export var glas: String
+var ime: String #dopolni
+var glas: String #dopolni
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

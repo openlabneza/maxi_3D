@@ -10,8 +10,6 @@
 
 [node name="Kuža" type="Node3D" parent="." unique_id=686340040]
 script = ExtResource("1_ig7tw")
-ime = "kuža Pepe"
-glas = "hov hov!"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Kuža" unique_id=1086654769]
 
